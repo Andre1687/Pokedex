@@ -5,7 +5,7 @@ interface IPagination {
   results: Pokemon[];
 }
 
-interface Pokemon {
+export interface Pokemon {
   name: string;
   url: string;
 }
@@ -16,3 +16,4 @@ export class Pagination implements IPagination {
   previous: string = '';
   results: Pokemon[] = [];
 }
+
