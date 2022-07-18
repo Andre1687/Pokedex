@@ -20,17 +20,13 @@ export class FilterComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.formBuilder.
+
   }
 
 
   buscador() {
     console.log('se ejecuto');
   }
-
-
-
-
 
 }
 
