@@ -11,15 +11,35 @@ export class PokedexComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
 
+  previous: string | null = null;
+
+  next: string | null = null;
+
   constructor(
     private _pokedexService: PokedexService
   ) { }
 
   ngOnInit(): void {
-    this._pokedexService.getPokemon().subscribe((datos: Pagination) => {
-      console.log({ datos });
-      this.pokemons = datos.results;
-    });
+    this.getPokemons('https://pokeapi.co/api/v2/pokemon');
+  }
+
+
+  changePage(typeButton: string) {
+    if (typeButton == 'next' && this.next != null) {
+      this.getPokemons(this.next);
+    } else if (typeButton == 'previous' && this.previous != null) {
+      this.getPokemons(this.previous);
+    }
+  }
+
+  getPokemons(url: string) {
+    this._pokedexService.getPokemon(url)
+      .subscribe((datos: Pagination) => {
+        console.log({ datos });
+        this.pokemons = datos.results;
+        this.previous = datos.previous;
+        this.next = datos.next;
+      });
   }
 
 

@@ -1,22 +1,30 @@
 <p id="title">pokedex nuevo</p>
-<div *ngFor=" let pokemon of pokemons ">
-  <p>{{  pokemon.name  }}</p>
+<app-filter></app-filter>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-5">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor=" let pokemon of pokemons ">{{ pokemon.name }}</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <div class="pagination-div">
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
+  <nav aria-label="...">
+    <ul class="pagination pagination justify-content-center">
+      <li class="page-item"
+        [class.disabled]="previous === null"
+        (click)="changePage('previous')">
+        <a class="page-link">Previous</a>
+      </li>
+      <li
+        class="page-item"
+        [class.disabled]="next === null"
+        (click)="changePage('next')">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
 </div>

@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { FilterComponent } from './pokedex/components/filter/filter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +15,14 @@ import { FaqComponent } from './pages/faq/faq.component';
     AppComponent,
     PokedexComponent,
     FaqComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

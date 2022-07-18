@@ -13,8 +13,8 @@ export class PokedexService {
   ) { }
 
 
-  getPokemon(): Observable<Pagination> {
-    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon')
+  getPokemon(url: string): Observable<Pagination> {
+    return this.httpClient.get(url)
       .pipe(map((data: any) => {
         const pagination: Pagination = data;
         return pagination;
