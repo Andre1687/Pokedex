@@ -6,13 +6,16 @@
         class="form-control"
         id="exampleDataList"
         placeholder="Type to search..."
-        [value]="textFilter"
+        [(ngModel)]="textFilter"
+        (keydown.enter)="search()"
         type="search">
     </div>
-    <form [formGroup]="checkoutForm">
-
-      <button class="button" type="submit">Purchase</button>
-
+    <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+      <input
+        class="form-control"
+        placeholder="Type to search..."
+        formControlName="q"
+        type="text">
     </form>
     <p>{{textFilter}}</p>
   </div>

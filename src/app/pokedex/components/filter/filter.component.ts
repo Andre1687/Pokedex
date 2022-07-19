@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { EDEADLK } from 'constants';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
@@ -8,26 +7,32 @@ import { EDEADLK } from 'constants';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-
+  @Output() query = new EventEmitter();
   textFilter = '';
-
-  checkoutForm = this.formBuilder.group({
-    textFilter: ''
-  });
+  searchForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder
-    ) { }
+    ) {
+      this.searchForm = this.formBuilder.group({
+        q: ['']
+      });
+    }
 
   ngOnInit(): void {
 
   }
 
 
-  buscador() {
+  search() {
     console.log('se ejecuto');
   }
 
+  submitForm() {
+    this.searchForm
+    const q = this.searchForm.value.q;
+    this.query.emit(q);
+  }
 }
 
 

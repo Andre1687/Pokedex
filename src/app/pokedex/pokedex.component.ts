@@ -10,6 +10,7 @@ import { PokedexService } from './pokedex.service';
 export class PokedexComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
+  pokemonsBk: Pokemon[] = [];
 
   previous: string | null = null;
 
@@ -35,12 +36,15 @@ export class PokedexComponent implements OnInit {
   getPokemons(url: string) {
     this._pokedexService.getPokemon(url)
       .subscribe((datos: Pagination) => {
-        console.log({ datos });
         this.pokemons = datos.results;
+        this.pokemonsBk = datos.results;
         this.previous = datos.previous;
         this.next = datos.next;
       });
   }
 
+  query(query: string) {
+    this.pokemons = this.pokemonsBk.filter(pokemon => pokemon.name.toLowerCase().includes(query.toLowerCase()));
+  }
 
 }
