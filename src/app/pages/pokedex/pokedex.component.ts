@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pagination, Pokemon } from '../shared/models/pagination';
+import { Pagination, Pokemon } from '../../shared/models/pagination';
 import { PokedexService } from './pokedex.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { PokedexService } from './pokedex.service';
 export class PokedexComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
+
+  backupPokemons: Pokemon[] = [];
 
   previous: string | null = null;
 
@@ -39,7 +41,17 @@ export class PokedexComponent implements OnInit {
         this.pokemons = datos.results;
         this.previous = datos.previous;
         this.next = datos.next;
+        this.backupPokemons = datos.results;
       });
+  }
+
+
+  busqueda(consulta: string): void {
+    this.pokemons = this.backupPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(consulta.toLowerCase()));
+  }
+
+  getId(pokemon: Pokemon): string {
+    return pokemon.url.split('/').slice(-2, -1).toString();
   }
 
 

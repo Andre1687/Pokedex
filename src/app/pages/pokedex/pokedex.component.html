@@ -1,17 +1,17 @@
 <p id="title">pokedex nuevo</p>
-<app-filter></app-filter>
+<app-filter (consultaEvent)="busqueda($event)"></app-filter>
 
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col col-lg-5">
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor=" let pokemon of pokemons ">{{ pokemon.name }}</li>
-      </ul>
+      <div class="list-group">
+        <a [routerLink]="['/detalle', getId(pokemon)]" class="list-group-item list-group-item-action" *ngFor=" let pokemon of pokemons ">{{ pokemon.name }}</a>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="pagination-div">
+<div class="pagination-div" *ngIf="pokemons.length == backupPokemons.length">
   <nav aria-label="...">
     <ul class="pagination pagination justify-content-center">
       <li class="page-item"

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { EDEADLK } from 'constants';
 
 @Component({
   selector: 'app-filter',
@@ -9,7 +8,7 @@ import { EDEADLK } from 'constants';
 })
 export class FilterComponent implements OnInit {
 
-  textFilter = '';
+  @Output() consultaEvent = new EventEmitter();
 
   checkoutForm = this.formBuilder.group({
     textFilter: ''
@@ -24,8 +23,10 @@ export class FilterComponent implements OnInit {
   }
 
 
-  buscador() {
-    console.log('se ejecuto');
+  emitirConsulta() {
+    const consulta = this.checkoutForm.value.textFilter;
+    this.consultaEvent.emit(consulta);
+
   }
 
 }
