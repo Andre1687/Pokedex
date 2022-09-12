@@ -14,9 +14,9 @@ export class DetallePokemonService {
 
   getDetalle(id: string): Observable<any> {
     return this.httpClient.get('https://pokeapi.co/api/v2/ability/' + id)
-      //.pipe(map((data: any) => {
-       // console.log(data);
+      .pipe(map((data: any) => {
+        console.log(data);
 
-      //}))
+      }))
   }
 }

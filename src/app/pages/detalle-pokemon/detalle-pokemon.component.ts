@@ -25,7 +25,7 @@ export class DetallePokemonComponent implements OnInit {
   }
 
   getDetallePokemon() {
-    this.detallePokemonService.getDetalle(this.id)
+    this.detallePokemonService.getDetalle(this.id).subscribe();
   }
 
 }
