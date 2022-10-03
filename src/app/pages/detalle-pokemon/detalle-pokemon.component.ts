@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DetallePokemonService } from './detalle-pokemon.service';
+import { Pokemon } from './models/pokemon';
 
 @Component({
   selector: 'app-detalle-pokemon',
@@ -10,10 +11,14 @@ import { DetallePokemonService } from './detalle-pokemon.service';
 export class DetallePokemonComponent implements OnInit {
 
   id: string = '';
+  name: string = '';
+  height: number = 0;
+  weight: number = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private detallePokemonService: DetallePokemonService ) { }
+    private detallePokemonService: DetallePokemonService,
+    private router: Router ) { }
 
   ngOnInit(): void {
     this.route.params
@@ -25,7 +30,15 @@ export class DetallePokemonComponent implements OnInit {
   }
 
   getDetallePokemon() {
-    this.detallePokemonService.getDetalle(this.id).subscribe();
+    this.detallePokemonService.getDetalle(this.id).subscribe((data: Pokemon) => {
+      this.name = data.name;
+      this.height = data.height;
+      this.weight = data.weight;
+    });
+  }
+
+  returnHome() {
+    this.router.navigate(['/']);
   }
 
 }
