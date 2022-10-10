@@ -9,6 +9,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { FilterComponent } from './pages/pokedex/components/filter/filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetallePokemonComponent } from './pages/detalle-pokemon/detalle-pokemon.component';
+import { StatsComponent } from './pages/detalle-pokemon/components/stats/stats.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { DetallePokemonComponent } from './pages/detalle-pokemon/detalle-pokemon
     FaqComponent,
     FilterComponent,
     DetallePokemonComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,
