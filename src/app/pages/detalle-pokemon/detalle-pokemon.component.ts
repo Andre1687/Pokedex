@@ -17,8 +17,7 @@ export class DetallePokemonComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private detallePokemonService: DetallePokemonService,
-    private router: Router ) { }
+    private detallePokemonService: DetallePokemonService  ) { }
 
   ngOnInit(): void {
     this.route.params
@@ -37,8 +36,5 @@ export class DetallePokemonComponent implements OnInit {
     });
   }
 
-  returnHome() {
-    this.router.navigate(['/']);
-  }
 
 }

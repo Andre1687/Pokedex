@@ -10,7 +10,9 @@ import { FilterComponent } from './pages/pokedex/components/filter/filter.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetallePokemonComponent } from './pages/detalle-pokemon/detalle-pokemon.component';
 import { StatsComponent } from './pages/detalle-pokemon/components/stats/stats.component';
-
+import { HeaderComponent } from './pages/detalle-pokemon/components/header/header.component';
+import { ImageComponent } from './pages/detalle-pokemon/components/image/image.component';
+import { CharacteristicsComponent } from './pages/detalle-pokemon/components/characteristics/characteristics.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,9 @@ import { StatsComponent } from './pages/detalle-pokemon/components/stats/stats.c
     FilterComponent,
     DetallePokemonComponent,
     StatsComponent,
+    HeaderComponent,
+    ImageComponent,
+    CharacteristicsComponent,
   ],
   imports: [
     BrowserModule,

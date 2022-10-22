@@ -1,0 +1,16 @@
+.img {
+  height: 400px;
+  /* skeleton bootrap pending */
+  background-color: rgb(213, 59, 71);
+  border-radius: 10%;
+  height: 300px;
+  width: 300px;
+}
+
+.imageBackground {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(213, 59, 71);
+  height: 300px;
+  align-items: center;
+}
