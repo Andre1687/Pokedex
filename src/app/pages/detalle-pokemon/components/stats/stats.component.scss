@@ -1,16 +1,16 @@
 .statsContainer {
   background-color: rgb(43, 41, 44);
   color: white;
-  height: 200px;
+  height: 400px;
 }
 
 .statsTitle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  padding-top: 30px;
+  padding-bottom: 15px;
   color: white;
-  background-color: grey;
 }
 
 .progress {
