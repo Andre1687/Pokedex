@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetallePokemonService } from './detalle-pokemon.service';
 import { Pokemon } from './models/pokemon';
+import { Stat } from './models/stat';
 
 @Component({
   selector: 'app-detalle-pokemon',
@@ -14,6 +15,7 @@ export class DetallePokemonComponent implements OnInit {
   name: string = '';
   height: number = 0;
   weight: number = 0;
+  stats: Stat[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +35,7 @@ export class DetallePokemonComponent implements OnInit {
       this.name = data.name;
       this.height = data.height;
       this.weight = data.weight;
+      this.stats = data.stats;
     });
   }
 
