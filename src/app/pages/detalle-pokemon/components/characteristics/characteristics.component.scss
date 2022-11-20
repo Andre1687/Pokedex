@@ -10,17 +10,11 @@
   font-size: 25px;
 }
 
-.blurbText1 {
-  background-color: rgb(101, 113, 117);
+.blurbText {
+  background-color: rgb(34, 34, 34);
   width: max-content;
-  padding: 5px 50px 5px 50px;
-  border-radius: 25px;
-  border: solid 1px darkgrey;
-}
-
-.blurbText2 {
-  background-color: rgb(37, 72, 220);
-  width: max-content;
+  min-width: 175px;
+  text-align: center;
   padding: 5px 50px 5px 50px;
   border-radius: 25px;
   border: solid 1px darkgrey;

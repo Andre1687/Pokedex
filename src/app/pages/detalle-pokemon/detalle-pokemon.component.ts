@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetallePokemonService } from './detalle-pokemon.service';
+import { Ability } from './models/ability';
 import { Pokemon } from './models/pokemon';
 import { Stat } from './models/stat';
 
@@ -13,9 +14,12 @@ export class DetallePokemonComponent implements OnInit {
 
   id: string = '';
   name: string = '';
+  //abilityOne: string = '';
+  //abilityTwo: string = '';
   height: number = 0;
   weight: number = 0;
   stats: Stat[] = [];
+  abilities: Ability[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -33,9 +37,12 @@ export class DetallePokemonComponent implements OnInit {
   getDetallePokemon() {
     this.detallePokemonService.getDetalle(this.id).subscribe((data: Pokemon) => {
       this.name = data.name;
+      //this.abilityOne = data.abilities[0].ability.name;
+      //this.abilityTwo = data.abilities[1].ability.name; //hacer dinamico por el bug
       this.height = data.height;
       this.weight = data.weight;
       this.stats = data.stats;
+      this.abilities = data.abilities;
     });
   }
 

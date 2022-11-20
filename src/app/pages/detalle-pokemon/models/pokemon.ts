@@ -1,3 +1,4 @@
+import { Ability } from "./ability";
 import { Stat } from "./stat";
 
 export interface Pokemon {
@@ -5,4 +6,5 @@ export interface Pokemon {
   height: number;
   weight: number;
   stats: Stat[];
+  abilities: Ability[];
 }

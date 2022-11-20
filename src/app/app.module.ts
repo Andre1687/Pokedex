@@ -13,6 +13,7 @@ import { StatsComponent } from './pages/detalle-pokemon/components/stats/stats.c
 import { HeaderComponent } from './pages/detalle-pokemon/components/header/header.component';
 import { ImageComponent } from './pages/detalle-pokemon/components/image/image.component';
 import { CharacteristicsComponent } from './pages/detalle-pokemon/components/characteristics/characteristics.component';
+import { PokemonImageComponent } from './shared/components/pokemon-image/pokemon-image.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CharacteristicsComponent } from './pages/detalle-pokemon/components/cha
     HeaderComponent,
     ImageComponent,
     CharacteristicsComponent,
+    PokemonImageComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,11 @@
 
 <app-image [idChildExample]="id"></app-image>
 
-<app-characteristics [height]="height" [weight]="weight" [name]="name"></app-characteristics>
+<app-characteristics
+  [name]="name"
+  [abilitiesChild]="abilities"
+  [height]="height"
+  [weight]="weight">
+</app-characteristics>
 
 <app-stats [listStats]="stats"></app-stats>
