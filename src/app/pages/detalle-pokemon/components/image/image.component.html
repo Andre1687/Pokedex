@@ -1,6 +1,6 @@
 <div class="imageLowestLayer">
-<div class="imageBackground">
-  <img class="img" *ngIf="idChildExample != ''" src="https://pokefanaticos.com/pokedex/assets/images/pokemon_iconos/{{idChildExample}}.png" alt="">
-
-</div>
+  <div class="imageBackground">
+    <app-pokemon-image width="300px" [idChildExample]="idChildExample">
+    </app-pokemon-image>
+  </div>
 </div>

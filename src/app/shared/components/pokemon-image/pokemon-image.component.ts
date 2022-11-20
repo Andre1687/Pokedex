@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PokemonImageComponent implements OnInit {
 
   @Input() idChildExample: string = '';
+  @Input() width: string = '1000px';
 
   constructor() { }
 
