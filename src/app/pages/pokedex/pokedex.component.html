@@ -5,13 +5,11 @@
   <div class="row justify-content-md-center">
     <div class="col col-lg-5">
       <div class="list-group">
-        <a
-        [routerLink]="['/detalle', getId(pokemon)]"
-        class="list-group-item list-group-item-action"
-        *ngFor=" let pokemon of pokemons ">
-        <app-pokemon-image width="200px" [idChildExample]="getId(pokemon)"></app-pokemon-image>
-        {{ pokemon.name }}
-        </a>
+        <app-card *ngFor=" let pokemon of pokemons "
+          [id]="getId(pokemon)"
+          [pokemonName]="pokemon.name"
+        >
+        </app-card>
       </div>
     </div>
   </div>
