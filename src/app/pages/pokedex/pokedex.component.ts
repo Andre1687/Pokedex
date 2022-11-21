@@ -50,9 +50,5 @@ export class PokedexComponent implements OnInit {
     this.pokemons = this.backupPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(consulta.toLowerCase()));
   }
 
-  getId(pokemon: Pokemon): string {
-    return pokemon.url.split('/').slice(-2, -1).toString();
-  }
-
 
 }

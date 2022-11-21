@@ -15,6 +15,7 @@ import { ImageComponent } from './pages/detalle-pokemon/components/image/image.c
 import { CharacteristicsComponent } from './pages/detalle-pokemon/components/characteristics/characteristics.component';
 import { PokemonImageComponent } from './shared/components/pokemon-image/pokemon-image.component';
 import { CardComponent } from './pages/pokedex/components/card/card.component';
+import { CardContainerComponent } from './pages/pokedex/components/card-container/card-container.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CardComponent } from './pages/pokedex/components/card/card.component';
     CharacteristicsComponent,
     PokemonImageComponent,
     CardComponent,
+    CardContainerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-<a [routerLink]="['/detalle', id]" class="list-group-item list-group-item-action">
-  <app-pokemon-image width="200px" [idChildExample]="id"></app-pokemon-image>
-  {{ pokemonName }}
+<a class="card" style="width: 18rem;"
+   [routerLink]="['/detalle', id]">
+    <app-pokemon-image width="200px" [idChildExample]="id"></app-pokemon-image>
+    {{ pokemonName }}
 </a>
+
