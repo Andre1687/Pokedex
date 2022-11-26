@@ -1,6 +1,8 @@
-<a class="card" style="width: 18rem;"
+<div class="card cardRadius mx-auto" style="width: 18rem;"
    [routerLink]="['/detalle', id]">
-    <app-pokemon-image width="200px" [idChildExample]="id"></app-pokemon-image>
-    {{ pokemonName }}
-</a>
+    <app-pokemon-image width="200px" [idChildExample]="id" class="marginFix"></app-pokemon-image>
+    <div class="card-body pt-0">
+      <h5 class="card-title text-center">{{ pokemonName }}</h5>
+    </div>
+</div>
 

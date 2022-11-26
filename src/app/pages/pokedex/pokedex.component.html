@@ -1,24 +1,20 @@
-<p id="title">pokedex nuevo</p>
-<app-filter (consultaEvent)="busqueda($event)"></app-filter>
+<div class="pokedex">
+  <app-filter class="pb-4" (consultaEvent)="busqueda($event)"></app-filter>
 
 
-<app-card-container [pokemons]="pokemons"></app-card-container>
+  <app-card-container [pokemons]="pokemons"></app-card-container>
 
 
-<div class="pagination-div" *ngIf="pokemons.length == backupPokemons.length">
-  <nav aria-label="...">
-    <ul class="pagination pagination justify-content-center">
-      <li class="page-item"
-        [class.disabled]="previous === null"
-        (click)="changePage('previous')">
-        <a class="page-link">Previous</a>
-      </li>
-      <li
-        class="page-item"
-        [class.disabled]="next === null"
-        (click)="changePage('next')">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="pagination-div" *ngIf="pokemons.length == backupPokemons.length">
+    <nav aria-label="...">
+      <ul class="pagination pagination justify-content-center">
+        <li class="page-item" [class.disabled]="previous === null" (click)="changePage('previous')">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item" [class.disabled]="next === null" (click)="changePage('next')">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
