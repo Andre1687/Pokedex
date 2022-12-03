@@ -5,3 +5,17 @@
 .cardRadius {
   border-radius: 20px;
 }
+
+.pokemonCards {
+ width: 10rem;
+  // @media (min-width: 420px) {
+  //   width: 20rem;
+  // } (esto es sass)
+}
+
+
+@media (min-width: 420px) {
+  .pokemonCards {
+    width: 15rem;
+  }
+}

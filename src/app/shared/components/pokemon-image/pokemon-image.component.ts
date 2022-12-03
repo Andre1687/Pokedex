@@ -9,6 +9,7 @@ export class PokemonImageComponent implements OnInit {
 
   @Input() idChildExample: string = '';
   @Input() width: string = '1000px';
+  @Input() height: string = '100px';
 
   constructor() { }
 
