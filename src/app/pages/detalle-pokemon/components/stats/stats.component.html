@@ -1,23 +1,25 @@
-<div class="statsContainer">
+<div class="mainBackground">
+  <div class="container stat__container">
 
-  <div class="statsTitle">
-    Base Stats
-  </div>
+    <div class="statsTitle">
+      Base Stats
+    </div>
 
-  <div class="item" *ngFor=" let variableThatCanChange of stats">
-    <p [innerHTML]='formatStat(variableThatCanChange.stat.name)' class="statName"></p>
-    <div class="progress">
-      <div
-      [ngClass]="formatStatColor(variableThatCanChange.stat.name)"
-      role="progressbar"
-      aria-label="Basic example"
-      [style.width]="variableThatCanChange.base_stat + '%'"
-      aria-valuenow="0"
-      aria-valuemin="0"
-      aria-valuemax="100">
-      {{variableThatCanChange.base_stat + '%'}}
+    <div class="item" *ngFor=" let variableThatCanChange of stats">
+      <p [innerHTML]='formatStat(variableThatCanChange.stat.name)' class="statName"></p>
+      <div class="progress">
+        <div
+        [ngClass]="formatStatColor(variableThatCanChange.stat.name)"
+        role="progressbar"
+        aria-label="Basic example"
+        [style.width]="variableThatCanChange.base_stat + '%'"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100">
+        {{variableThatCanChange.base_stat + '%'}}
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>

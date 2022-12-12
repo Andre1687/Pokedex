@@ -1,7 +1,15 @@
 <div class="content2">
-  <div class="name"><strong>{{name}}</strong></div>
+
+  <div class="name">
+    <strong>{{name}}</strong>
+  </div>
+
   <div class="abilities">
-    <div class="blurbText" *ngFor=" let i of abilities">{{i.ability.name}}</div>
+    <div class="blurbText"
+      *ngFor=" let i of abilities"
+    >
+      {{i.ability.name}}
+    </div>
   </div>
 
   <div class="characteristics">
@@ -16,4 +24,5 @@
       <div class="text2">Height</div>
     </div>
   </div>
+
 </div>

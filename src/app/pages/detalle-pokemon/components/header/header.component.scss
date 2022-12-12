@@ -1,10 +1,17 @@
 .lowestLayerBackground {
-  background-color: rgb(213, 59, 71);}
+ background-color: rgb(213, 59, 71);
+}
 
 .header {
   color: white;
   background-color: rgb(213, 59, 71);
   padding-top: 20px;
+}
+
+.header {
+  &__container {
+    max-width: 800px;
+  }
 }
 
 .backArrow {
@@ -15,13 +22,14 @@
   border-top: 15px;
 }
 
-.pokemonTitle {
-  padding-top: 15px;
-  font-weight: 500;
+.spanPokemonTitle {
+  padding-left: 10px;
+  font-weight: 200;
+  font-size: 25px;
 }
 
 .pokemonNum {
-  padding-top: 15px;
-  text-align: end;
-  font-weight: 500;
+  padding-right: 6px;
+  font-weight: 200;
+  font-size: 20px;
 }
