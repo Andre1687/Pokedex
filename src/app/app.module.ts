@@ -16,6 +16,7 @@ import { CharacteristicsComponent } from './pages/detalle-pokemon/components/cha
 import { PokemonImageComponent } from './shared/components/pokemon-image/pokemon-image.component';
 import { CardComponent } from './pages/pokedex/components/card/card.component';
 import { CardContainerComponent } from './pages/pokedex/components/card-container/card-container.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SkeletonPokedexComponent } from './pages/pokedex/components/skeleton-pokedex/skeleton-pokedex.component';
