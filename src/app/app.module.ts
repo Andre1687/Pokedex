@@ -16,6 +16,7 @@ import { CharacteristicsComponent } from './pages/detalle-pokemon/components/cha
 import { PokemonImageComponent } from './shared/components/pokemon-image/pokemon-image.component';
 import { CardComponent } from './pages/pokedex/components/card/card.component';
 import { CardContainerComponent } from './pages/pokedex/components/card-container/card-container.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CardContainerComponent } from './pages/pokedex/components/card-containe
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
