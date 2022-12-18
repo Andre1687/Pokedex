@@ -1,6 +1,18 @@
 <div class="mainBackground">
   <div class="container stat__container">
 
+    <ngx-skeleton-loader
+      *ngIf="listStats == null"
+      count="5"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '10px',
+        height: '15px',
+        width: 'max-width'
+      }"
+    >
+    </ngx-skeleton-loader>
+
     <div class="statsTitle">
       Base Stats
     </div>

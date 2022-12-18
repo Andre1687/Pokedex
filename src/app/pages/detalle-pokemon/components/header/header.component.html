@@ -1,5 +1,18 @@
 <div class="lowestLayerBackground">
   <div class="container header header__container">
+
+    <ngx-skeleton-loader
+      *ngIf="id == null "
+      count="1"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '10px',
+        height: '50px',
+        width: 'max-width'
+      }"
+    >
+    </ngx-skeleton-loader>
+
     <div class="d-flex justify-content-between align-items-center">
       <button class="d-flex align-items-center backArrow" (click)="returnHome()">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"

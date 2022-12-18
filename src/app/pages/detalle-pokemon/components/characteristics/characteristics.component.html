@@ -1,5 +1,43 @@
 <div class="content2">
 
+  <ngx-skeleton-loader
+    *ngIf="name == null"
+    count="1"
+    animation="progress-dark"
+    [theme]="{
+      'border-radius': '10px',
+      height: '50px',
+      width: '150px',
+      display: 'flex'
+      }"
+  >
+  </ngx-skeleton-loader>
+
+  <ngx-skeleton-loader
+    *ngIf="abilities == null"
+    count="2"
+    animation="progress-dark"
+    [theme]="{
+      'border-radius': '10px',
+      height: '50px',
+      width: '150px'
+      }"
+    >
+  </ngx-skeleton-loader>
+
+  <ngx-skeleton-loader
+    *ngIf="weight && height == null"
+    count="2"
+    animation="progress-dark"
+    [theme]="{
+      'border-radius': '10px',
+      height: '50px',
+      width: '150px'
+      }"
+    >
+  </ngx-skeleton-loader>
+
+
   <div class="name">
     <strong>{{name}}</strong>
   </div>
