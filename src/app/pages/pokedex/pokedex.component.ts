@@ -50,5 +50,8 @@ export class PokedexComponent implements OnInit {
     this.pokemons = this.backupPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(consulta.toLowerCase()));
   }
 
+  onScroll() {
+    console.log("scrolled!!");
+  }
 
 }

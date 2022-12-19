@@ -17,8 +17,8 @@ import { PokemonImageComponent } from './shared/components/pokemon-image/pokemon
 import { CardComponent } from './pages/pokedex/components/card/card.component';
 import { CardContainerComponent } from './pages/pokedex/components/card-container/card-container.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SkeletonPokedexComponent } from './pages/pokedex/components/skeleton-pokedex/skeleton-pokedex.component';
 
 @NgModule({
@@ -43,7 +43,8 @@ import { SkeletonPokedexComponent } from './pages/pokedex/components/skeleton-po
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

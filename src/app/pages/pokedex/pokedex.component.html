@@ -1,18 +1,11 @@
-<div class="pokedex">
+<div
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollUpDistance]="1"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+  class="pokedex">
   <!-- <app-filter class="pb-4" (consultaEvent)="busqueda($event)"></app-filter> -->
-
-  <div class="item">
-    <ngx-skeleton-loader
-      animation="progress-dark"
-      count="1"
-      appearance=""
-      [theme]="{
-        width: '15rem',
-        height: '190px',
-        'border-radius': '10px'
-      }"
-    ></ngx-skeleton-loader>
-  </div>
 
   <app-skeleton-pokedex *ngIf="pokemons.length == 0"></app-skeleton-pokedex>
 
