@@ -1,41 +1,70 @@
 <div class="content2">
 
-  <ngx-skeleton-loader
-    *ngIf="name == null"
-    count="1"
-    animation="progress-dark"
-    [theme]="{
-      'border-radius': '10px',
-      height: '50px',
-      width: '150px',
-      display: 'flex'
-      }"
-  >
-  </ngx-skeleton-loader>
-
-  <ngx-skeleton-loader
-    *ngIf="abilities == null"
-    count="2"
-    animation="progress-dark"
-    [theme]="{
-      'border-radius': '10px',
-      height: '50px',
-      width: '150px'
+  <div class="d-flex justify-content-center">
+    <ngx-skeleton-loader
+      *ngIf="!name"
+      count="1"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '10px',
+        height: '30px',
+        width: '150px',
+        display: 'flex'
       }"
     >
-  </ngx-skeleton-loader>
+    </ngx-skeleton-loader>
+  </div>
 
-  <ngx-skeleton-loader
-    *ngIf="weight && height == null"
-    count="2"
-    animation="progress-dark"
-    [theme]="{
-      'border-radius': '10px',
-      height: '50px',
-      width: '150px'
+  <div class="d-flex justify-content-center abilities__skeleton">
+    <ngx-skeleton-loader
+      *ngIf="abilities.length == 0"
+      count="1"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '25px',
+        height: '40px',
+        width: '200px'
       }"
     >
-  </ngx-skeleton-loader>
+    </ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      *ngIf="abilities.length == 0"
+      count="1"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '25px',
+        height: '40px',
+        width: '200px'
+      }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+
+  <div class="d-flex justify-content-center abilities__skeletonWeightHeight">
+    <ngx-skeleton-loader
+      *ngIf="weight == 0 && height == 0"
+      count="1"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '15px',
+        height: '60px',
+        width: '70px'
+      }"
+    >
+    </ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      *ngIf="weight == 0 && height == 0"
+      count="1"
+      animation="progress-dark"
+      [theme]="{
+        'border-radius': '15px',
+        height: '60px',
+        width: '70px'
+      }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+
 
 
   <div class="name">
@@ -51,12 +80,12 @@
   </div>
 
   <div class="characteristics">
-    <div>
+    <div *ngIf="weight != 0 && height != 0">
       <div class="text1">{{weight}}.0 KG</div>
       <!--pipe convertir a decimal-->
       <div class="text2">Weight</div>
     </div>
-    <div>
+    <div *ngIf="weight != 0 && height != 0">
       <div class="text1">{{height}}.0 M</div>
       <!--pipe convertir a decimal-->
       <div class="text2">Height</div>

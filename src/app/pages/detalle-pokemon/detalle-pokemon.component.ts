@@ -14,8 +14,6 @@ export class DetallePokemonComponent implements OnInit {
 
   id: string = '';
   name: string = '';
-  //abilityOne: string = '';
-  //abilityTwo: string = '';
   height: number = 0;
   weight: number = 0;
   stats: Stat[] = [];
@@ -29,16 +27,14 @@ export class DetallePokemonComponent implements OnInit {
     this.route.params
       .subscribe((params: any) =>  {
         this.id = params.id;
-        console.log(this.id);
         this.getDetallePokemon();
       })
   }
 
+
   getDetallePokemon() {
     this.detallePokemonService.getDetalle(this.id).subscribe((data: Pokemon) => {
       this.name = data.name;
-      //this.abilityOne = data.abilities[0].ability.name;
-      //this.abilityTwo = data.abilities[1].ability.name; //hacer dinamico por el bug
       this.height = data.height;
       this.weight = data.weight;
       this.stats = data.stats;

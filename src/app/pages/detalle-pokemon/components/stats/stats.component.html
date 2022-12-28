@@ -1,21 +1,38 @@
 <div class="mainBackground">
+
   <div class="container stat__container">
-
-    <ngx-skeleton-loader
-      *ngIf="listStats == null"
-      count="5"
-      animation="progress-dark"
-      [theme]="{
-        'border-radius': '10px',
-        height: '15px',
-        width: 'max-width'
-      }"
-    >
-    </ngx-skeleton-loader>
-
     <div class="statsTitle">
       Base Stats
     </div>
+
+
+    <div class="d-flex flex-column align-items-center" *ngIf="listStats.length == 0">
+      <ngx-skeleton-loader count="1" animation="progress-dark" [theme]="{
+            'border-radius': '5px',
+            height: '16px',
+            width: '550px'
+          }">
+      </ngx-skeleton-loader>
+      <ngx-skeleton-loader count="1" animation="progress-dark" [theme]="{
+            'border-radius': '5px',
+            height: '16px',
+            width: '550px'
+          }">
+      </ngx-skeleton-loader>
+      <ngx-skeleton-loader count="1" animation="progress-dark" [theme]="{
+            'border-radius': '5px',
+            height: '16px',
+            width: '550px'
+          }">
+      </ngx-skeleton-loader>
+      <ngx-skeleton-loader count="1" animation="progress-dark" [theme]="{
+            'border-radius': '5px',
+            height: '16px',
+            width: '550px'
+          }">
+      </ngx-skeleton-loader>
+    </div>
+
 
     <div class="item" *ngFor=" let variableThatCanChange of stats">
       <p [innerHTML]='formatStat(variableThatCanChange.stat.name)' class="statName"></p>
@@ -32,6 +49,6 @@
         </div>
       </div>
     </div>
-
   </div>
+
 </div>

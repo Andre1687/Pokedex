@@ -1,18 +1,6 @@
 <div class="imageLowestLayer">
   <div class="imageBackground">
 
-    <ngx-skeleton-loader
-      *ngIf="idChildExample == null"
-      count="1"
-      animation="progress-dark"
-      [theme]="{
-        'border-radius': '10px',
-        height: '300px',
-        width: '300px'
-      }"
-    >
-    </ngx-skeleton-loader>
-
     <app-pokemon-image width="300px" height="300px" [idChildExample]="idChildExample">
     </app-pokemon-image>
   </div>
