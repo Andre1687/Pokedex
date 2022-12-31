@@ -11,9 +11,7 @@ export class PokedexComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
 
-  previous: string | null = null;
-
-  next: string | null = null;
+  nextPage: string | null = null;
 
   constructor(
     private _pokedexService: PokedexService
@@ -34,10 +32,8 @@ export class PokedexComponent implements OnInit {
 
 
   changePage(typeButton: string) {
-    if (typeButton == 'next' && this.next != null) {
-      this.getPokemons(this.next);
-    } else if (typeButton == 'previous' && this.previous != null) {
-      this.getPokemons(this.previous);
+    if (typeButton == 'next' && this.nextPage != null) {
+      this.getPokemons(this.nextPage);
     }
   }
 
@@ -46,8 +42,7 @@ export class PokedexComponent implements OnInit {
       .subscribe((datos: Pagination) => {
         console.log({ datos });
         this.pokemons = this.pokemons.concat(datos.results);
-        this.previous = datos.previous;
-        this.next = datos.next;
+        this.nextPage = datos.next;
       });
   }
 
