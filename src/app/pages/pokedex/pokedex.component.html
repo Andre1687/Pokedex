@@ -1,5 +1,11 @@
-<div class="pokedex">
-  <!-- <app-filter class="pb-4" (consultaEvent)="busqueda($event)"></app-filter> -->
+<div
+  class="pokedex"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+
 
 
   <div class="pokedexHeader">
@@ -13,16 +19,11 @@
   <app-card-container [pokemons]="pokemons"></app-card-container>
 
 
-  <div class="pagination-div" *ngIf="pokemons.length == backupPokemons.length">
-    <nav aria-label="...">
-      <ul class="pagination pagination justify-content-center">
-        <li class="page-item" [class.disabled]="previous === null" (click)="changePage('previous')">
-          <a class="page-link">Previous</a>
-        </li>
-        <li class="page-item" [class.disabled]="next === null" (click)="changePage('next')">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
+
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-light m-5 " role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
+
 </div>
