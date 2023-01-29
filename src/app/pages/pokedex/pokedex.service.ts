@@ -13,7 +13,7 @@ export class PokedexService {
   ) { }
 
 
-  getPokemon(url: string): Observable<Pagination> {
+  public getPokemon(url: string): Observable<Pagination> {
     return this.httpClient.get(url)
       .pipe(map((data: any) => {
         const pagination: Pagination = data;
