@@ -50,7 +50,7 @@ export class StatsComponent implements OnInit {
       { value: 'hp', color: 'bg-danger' },
       { value: 'attack', color: 'bg-warning' },
       { value: 'defense', color: 'bg-primary' },
-      { value: 'speed', color: 'bg-info' }
+      { value: 'speed', color: 'bg-success' }
     ];
 
     const statSearchResult = defaultList.find(i => i.value.toLocaleLowerCase().includes(statTitle.toLocaleLowerCase()));
