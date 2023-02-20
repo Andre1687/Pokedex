@@ -12,7 +12,7 @@
 
 .blurbText {
   background-color: rgb(34, 34, 34);
-  width: max-content;
+  width: 217px;
   min-width: 150px;
   text-align: center;
   padding: 6px 50px 8px 50px;
@@ -20,18 +20,18 @@
   border: solid 1px darkgrey;
 
   @media (min-width: 420px) {
-    width: 200px;
+    min-width: 200px;
   }
 }
 
 .abilities {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-top: 10px;
+  gap: 15px;
+  margin-top: 20px;
   margin-bottom: 30px;
   &__skeleton {
-    gap: 25px;
+    gap: 15px;
   }
   &__skeletonWeightHeight {
     gap: 150px;
